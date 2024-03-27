@@ -12,7 +12,7 @@
                 images.forEach(image => {
                     const thumbnail = document.createElement('div');
                     thumbnail.className = 'thumbnail';
-                    thumbnail.innerHTML = <img src="${image}" alt="Thumbnail" onclick="selectImage('${image}')">;
+                    thumbnail.innerHTML = `<img src="${image}" alt="Thumbnail" onclick="selectImage('${image}')">`;
                     gallery.appendChild(thumbnail);
                 });
             });
@@ -34,35 +34,12 @@
             selectedImage.src = imageSrc;
         };
     
-        // Load images when the page loads
-        loadImages();
+        loadImages(); // Call the function to load images
     };
     </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Viewer</title>
-<style>
-    #gallery {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .thumbnail {
-        margin: 5px;
-        cursor: pointer;
-    }
-    .thumbnail img {
-        width: 100px;
-        height: 100px;
-    }
-    #selectedImage {
-        max-width: 100%;
-        max-height: 80vh;
-    }
-</style>
 </head>
 <body>
-<div id="gallery"></div>
-<img id="selectedImage">
-<script src="script.js"></script>
+    <div id="gallery"></div>
+    <img id="selectedImage" />
 </body>
 </html>
